@@ -21,6 +21,7 @@ public class ParkingLots {
 
     public int getAvailableSlots() {
         return availableSlots;
+
     }
 
     public ParkStatus enterACar() {
