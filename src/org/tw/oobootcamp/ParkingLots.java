@@ -10,15 +10,23 @@ package org.tw.oobootcamp;
 public class ParkingLots {
     private int availableSlots;
 
-    public void setSlots(int i) {
-        availableSlots = i;
+    public ParkingLots(int availableSlots) {
+        initWithAvailableSlotsCount(availableSlots);
+
+    }
+
+    private void initWithAvailableSlotsCount(int availableSlots) {
+        this.availableSlots =  availableSlots < 0 ? 0 : availableSlots;
     }
 
     public int getAvailableSlots() {
         return availableSlots;
     }
 
-    public void park() {
+    public ParkStatus enterACar() {
+        if (availableSlots == 0) return ParkStatus.FAIL;
         availableSlots--;
+        return ParkStatus.SUCCESS;
     }
+
 }
