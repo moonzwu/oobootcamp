@@ -3,6 +3,7 @@ import org.tw.oobootcamp.ParkingLots;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,5 +19,17 @@ public class ParkingLotsTest {
         parkingLots.setSlots(3);
         parkingLots.park();
         assertThat(parkingLots.getAvailableSlots(), is(2));
+    }
+
+    @Test
+    public void given_0_slots_when_park_then_should_fail() {
+        ParkingLots parkingLots = new ParkingLots();
+        parkingLots.setSlots(0);
+        try {
+            parkingLots.park();
+            fail();
+        } catch (Exception e) {
+            assertThat(e.getMessage(), is("No available slots!"));
+        }
     }
 }
