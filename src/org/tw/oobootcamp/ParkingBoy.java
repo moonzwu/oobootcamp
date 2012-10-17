@@ -10,7 +10,21 @@ package org.tw.oobootcamp;
  * To change this template use File | Settings | File Templates.
  */
 public class ParkingBoy {
-    public Ticket receive(Car car) {
-        return new Ticket();
+
+
+    private ParkingLots parkingLots;
+
+    public ParkingBoy(ParkingLots parkingLots) {
+        this.parkingLots = parkingLots;
+    }
+
+    public Ticket receiveACar(Car car) throws Exception {
+        parkingLots.enterACar();
+        return  new Ticket();
+    }
+
+    public Car returnACar(Ticket ticket) {
+
+        return new Car(1111);
     }
 }

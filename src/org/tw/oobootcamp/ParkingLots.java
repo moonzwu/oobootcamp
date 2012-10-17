@@ -29,4 +29,6 @@ public class ParkingLots {
         if (availableSlots >= capacity ) throw new Exception("no more cars in parkingSlots");
         availableSlots++;
     }
+
+
 }

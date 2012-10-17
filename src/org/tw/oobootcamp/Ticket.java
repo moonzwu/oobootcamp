@@ -8,4 +8,5 @@ package org.tw.oobootcamp;
  * To change this template use File | Settings | File Templates.
  */
 public class Ticket {
+
 }
