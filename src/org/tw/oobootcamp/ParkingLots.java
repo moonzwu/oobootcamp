@@ -9,9 +9,11 @@ package org.tw.oobootcamp;
  */
 public class ParkingLots {
     private int availableSlots;
+    private int capacity;
 
     public ParkingLots(int availableSlots) {
         initWithAvailableSlotsCount(availableSlots);
+        this.capacity =  availableSlots;
 
     }
 
@@ -34,4 +36,7 @@ public class ParkingLots {
         availableSlots++;
     }
 
+    public int getCapacity() {
+        return capacity;
+    }
 }

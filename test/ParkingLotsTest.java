@@ -1,8 +1,9 @@
 import org.junit.Test;
-import org.tw.oobootcamp.ParkStatus;
-import org.tw.oobootcamp.ParkingLots;
+import org.tw.oobootcamp.*;
 
 import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.IsNot.not;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -45,6 +46,20 @@ public class ParkingLotsTest {
         ParkingLots parkingLots = new ParkingLots(3);
         parkingLots.unparkACar();
         assertThat(parkingLots.getAvailableSlots(), is(4));
+    }
+
+    @Test
+    public void given_3_slots_when_no_unpark_then_not_4_slots_left() {
+        ParkingLots parkingLots = new ParkingLots(3);
+        assertThat(parkingLots.getAvailableSlots(), not(4));
+    }
+
+    @Test
+    public void given_a_car_when_give_to_parking_boy_then_get_ticket() {
+        Car car = new Car();
+        ParkingBoy parkingBoy = new ParkingBoy();
+        Ticket ticket = parkingBoy.receive(car);
+        assertNotNull(ticket);
     }
 
 
