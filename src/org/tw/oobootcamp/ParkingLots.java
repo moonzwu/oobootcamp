@@ -11,32 +11,22 @@ public class ParkingLots {
     private int availableSlots;
     private int capacity;
 
-    public ParkingLots(int availableSlots) {
-        initWithAvailableSlotsCount(availableSlots);
-        this.capacity =  availableSlots;
-
+    public ParkingLots(int capacity) {
+        availableSlots = capacity;
+        this.capacity = capacity;
     }
 
-    private void initWithAvailableSlotsCount(int availableSlots) {
-        this.availableSlots =  availableSlots < 0 ? 0 : availableSlots;
+    public void enterACar() throws Exception {
+        if (availableSlots == 0) throw new Exception("ParkingSlots no available slots");
+        availableSlots--;
     }
 
     public int getAvailableSlots() {
         return availableSlots;
-
     }
 
-    public ParkStatus enterACar() {
-        if (availableSlots == 0) return ParkStatus.FAIL;
-        availableSlots--;
-        return ParkStatus.SUCCESS;
-    }
-
-    public void unparkACar() {
+    public void unparkACar() throws Exception {
+        if (availableSlots >= capacity ) throw new Exception("no more cars in parkingSlots");
         availableSlots++;
-    }
-
-    public int getCapacity() {
-        return capacity;
     }
 }
