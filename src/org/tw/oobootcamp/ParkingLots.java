@@ -30,4 +30,8 @@ public class ParkingLots {
         return ParkStatus.SUCCESS;
     }
 
+    public void unparkACar() {
+        availableSlots++;
+    }
+
 }

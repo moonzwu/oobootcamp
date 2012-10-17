@@ -39,4 +39,13 @@ public class ParkingLotsTest {
         ParkingLots parkingLots = new ParkingLots(3);
         assertThat(parkingLots.getAvailableSlots(), is(3));
     }
+
+    @Test
+    public void given_3_slots_when_unpark_then_4_slots_left() {
+        ParkingLots parkingLots = new ParkingLots(3);
+        parkingLots.unparkACar();
+        assertThat(parkingLots.getAvailableSlots(), is(4));
+    }
+
+
 }
