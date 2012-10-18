@@ -9,4 +9,17 @@ package org.tw.oobootcamp;
  */
 public class Ticket {
 
+    private int carId;
+
+    public Ticket(int carId) {
+        this.carId = carId;
+    }
+
+    public Ticket() {
+
+    }
+
+    public int getCarId() {
+        return carId;
+    }
 }
